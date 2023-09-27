@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="16x16"  href="image/favicons/favicon-16x16.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/cart.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.min.css" integrity="sha512-/VYneElp5u4puMaIp/4ibGxlTd2MV3kuUIroR3NSQjS2h9XKQNebRQiyyoQKeiGE9mRdjSCIZf9pb7AVJ8DhCg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;700&family=Pacifico&display=swap" rel="stylesheet">
+    <title>Giỏ hàng</title>
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar__header">
+            <!-- logo -->
+            <div class="navbar__logo">
+                <a class="navbar__logo-link" href="index.html">
+                    <img src="image/logo.png" alt="" class="logo-img">
+                </a>
+            </div>
+            
+            <!-- nav link -->
+            <div class="navbar__items">
+                <ul class="navbar__items-list">
+                    <li class="navbar-list__item">
+                        <a class="navbar-list__item-link" href="index.html">TRANG CHỦ</a>
+                    </li>
+                    <li class="navbar-list__item">
+                        <a class="navbar-list__item-link" href="about.html">GIỚI THIỆU</a>
+                    </li>
+                    <li class="navbar-list__item">
+                        <a class="navbar-list__item-link" href="product.html">SẢN PHẨM</a>
+                    </li>
+                    <li class="navbar-list__item">
+                        <a class="navbar-list__item-link" href="contact.html">LIÊN HỆ</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Nav search -->
+            <div class="navbar__search-login">
+                <form method="" action="" class="navbar__search">
+                    <input type="text" class="navbar__search__input" name="search_product">
+                    <label for="search_product" class="navbar__search__label">
+                        <a href="#" class="navbar__search__label-link"><i class="ri-search-line"></i></a>
+                    </label>
+                </form>
+                
+                <div class="navbar__login-cart">
+                    <div class="cart">
+                        <a href="#" class="cart-link">
+                            <i class="ri-shopping-basket-line"></i>
+                            <div class="cart__count">0</div>
+                        </a>
+                    </div>
+                    <a class="login" href="login.html">
+                        <i class="ri-user-line"></i>
+                    </a>
+                </div>    
+                <div class="navbar__menu">
+                    <i class="ri-menu-line"></i>
+                </div>                  
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container-fluid cart-page">
+            <h3>Giỏ hàng của bạn</h3>
+            <div class="row cart-page__title">
+                <p class="col-sm-5 cart-page__title__name"></p>
+                <p class="col-sm-2 cart-page__title__size">Kích thước</p>
+                <p class="col-sm-2 cart-page__title__quanlity">Số lượng</p>
+                <p class="col-sm-2 cart-page__title__price">Giá thành</p>
+            </div>
+            <div class="row cart-page__items">
+                <div class="col-sm-5 cart-page__items__names row">
+                    <img src="image/hot_cake.jpg" alt="" class="col-4 cart-page__items__names__img">
+                    <span class="col-8 cart-page__items__names__name">Bánh kem dâu tây</span>
+                </div>
+                <div class="col-sm-4 cart-page__items__quanlity">
+                    <input type="text" value="S">
+                    <input type="number" name="number" value="1">
+                </div>
+                <p class="col-sm-2 cart-page__items__price">450.000</p>
+                <a class="col-sm-1 cart-page__items__delete">
+                    <i class="ri-delete-bin-line"></i>
+                </a>
+            </div>
+            <div class="row cart-page__items">
+                <div class="col-sm-5 cart-page__items__names row">
+                    <img src="image/hot_cake.jpg" alt="" class="col-4 cart-page__items__names__img">
+                    <span class="col-8 cart-page__items__names__name">Bánh kem dâu tây</span>
+                </div>
+                <div class="col-sm-4 cart-page__items__quanlity">
+                    <input type="text" value="S">
+                    <input type="number" name="number" value="1">
+                </div>
+                <p class="col-sm-2 cart-page__items__price">450.000</p>
+                <a class="col-sm-1 cart-page__items__delete">
+                    <i class="ri-delete-bin-line"></i>
+                </a>
+            </div>
+            <div class="row cart-page__items">
+                <div class="col-sm-5 cart-page__items__names row">
+                    <img src="image/hot_cake.jpg" alt="" class="col-4 cart-page__items__names__img">
+                    <span class="col-8 cart-page__items__names__name">Bánh kem dâu tây</span>
+                </div>
+                <div class="col-sm-4 cart-page__items__quanlity">
+                    <input type="text" value="S">
+                    <input type="number" name="number" value="1">
+                </div>
+                <p class="col-sm-2 cart-page__items__price">450.000</p>
+                <a class="col-sm-1 cart-page__items__delete">
+                    <i class="ri-delete-bin-line"></i>
+                </a>
+            </div>
+
+            <!-- TOTAL -->
+            <div class="cart__page__total">
+                <p class="">Tổng số lượng: 3</p>
+                <p class="">Thành tiền: 1.240.000</p>
+                <a href="payment.html" class="cart__page__total__button">Thanh toán</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-info">
+            <div class="footer">
+                <h4 class="footer__title">Thông tin cửa hàng</h4>
+                <ul class="footer__list">
+                    <li>Địa chỉ: phường Xuân Khánh, quận Ninh Kiểu, thành phố Cần Thơ</li>
+                    <li>Giờ mở cửa: 8h - 21h</li>
+                    <li>Số điện thoại: 0123 456 789</li>
+                    <li>Email: ohCakeBekery@cake.com</li>
+                </ul>
+            </div>
+            <div class="footer">
+                <h4 class="footer__title">Danh mục</h4>
+                <ul class="footer__list">
+                    <li>Trang chủ</li>
+                    <li>Giới thiệu</li>
+                    <li>Sản phẩm</li>
+                    <li>Liên hệ</li>
+                </ul>
+            </div>
+            <div class="footer">
+                <h4 class="footer__title">Mạng xã hội</h4>
+                <ul class="footer__list">
+                    <li>
+                        <i class="ri-facebook-circle-line"></i>
+                        Facebook
+                    </li>
+                    <li>
+                        <i class="ri-instagram-line"></i>
+                        Instagram
+                    </li>
+                    <li>
+                        <i class="ri-tiktok-line"></i>
+                        Tiktok
+                    </li>
+                </ul>
+            </div>
+            <div class="footer">
+                <h4>Phương thức thanh toán</h4>
+                <div class="footer__paying">
+                    <img src="image/thanh_toan/8543_13-06-2016_Tienmat_Icon_big-2.png" alt="" class="footer__paying-img">
+                    <img src="image/thanh_toan/MoMo_Logo.png" alt="" class="footer__paying-img">
+                    <img src="image/thanh_toan/Mastercard-logo.svg.png" alt="" class="footer__paying-img">
+                    <img src="image/thanh_toan/visa-payment-card1873.jpg" alt="" class="footer__paying-img">
+                </div>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <p>Copyright &copy 2023, Cửa hàng bánh OCake</p>
+        </div>
+    </footer>
+    
+    <script src="js/main.js"></script>
+</body>
+</html>
