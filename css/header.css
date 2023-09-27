@@ -8,20 +8,23 @@
 header {
     position: fixed;
     z-index: 1000;
-    background-color: #fff;
-    width: calc(100% - 72px);
-    top: 0;
-
-}
-
-.navbar {
-    background-color: #fff;
-    height: 120px;
-    align-items: center;
-    z-index: 1;
+    width: 100%;
     display: flex;
     justify-content: space-between;
-    min-width: 100%;
+    top: 0;
+    right: 0;
+}
+
+.navbar__header {
+    background-color: #fff;
+    height: 120px;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 36px;
 }
 
 .logo-img {
@@ -30,7 +33,7 @@ header {
 
 .navbar__items {
     line-height: 1rem;
-    padding-bottom: 20px;
+    /* padding-bottom: 20px; */
 }
 
 
