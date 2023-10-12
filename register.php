@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,6 +20,13 @@
     <title>Đăng ký</title>
 </head>
 <body>
+    <?php 
+        session_start();
+        if(isset($_SESSION["error_message"])){
+            echo "<div class='error_register'>".$_SESSION["error_message"]."</div>";
+            unset($_SESSION["error_message"]);
+        }
+    ?>
     <header class="header">
         <nav class="navbar__header navbar--login">
             <!-- logo -->
@@ -51,7 +59,7 @@
         </nav>
     </header>
     <div class="register-page">
-        <form method="" action="" class="register-form">
+        <form method="post" action="php/add_user.php" class="register-form">
             <h1 class="register-form__title">Đăng ký</h1>
             
             <div class="register-form__input">
@@ -62,7 +70,6 @@
                 <label for="birthday">Ngày sinh:</label>
                 <input type="date" class="user__birthday" name="birthday">
             </div>
-        
         
             <div class="register-form__input">
                 <label for="email">Email:</label>
@@ -79,8 +86,8 @@
                 <input type="password" class="user__password" name="password" placeholder="Nhập mật khẩu ">
             </div>
             <div class="register-form__input">
-                <label for="password-confirm">Nhập lại mật khẩu:</label>
-                <input type="text" class="user__password-confirm" name="password-confirm" placeholder="Nhập lại mật khẩu ">
+                <label for="password_confirm">Nhập lại mật khẩu:</label>
+                <input type="password" class="user__password_confirm" name="password_confirm" placeholder="Nhập lại mật khẩu ">
             </div>
 
             <div class="register-form__input">
@@ -88,7 +95,7 @@
                 <input type="text" class="user__address" name="address" placeholder="Nhập địa chỉ">
             </div>
 
-            <button class="register-form__submit">Đăng ký</button>
+            <button class="register-form__submit" type="submit">Đăng ký</button>
             <div class="login-link">
                 <span>Bạn đã có tài khoản</span>
                 <a href="login.html">Đăng nhập</a>
@@ -98,6 +105,8 @@
 
     <!-- JS -->
     <script src="js/main.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="js/validate_form.js"></script>
 </body>
 </html>
