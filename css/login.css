@@ -55,6 +55,8 @@ header {
     border: none;
     background-color: rgb(230, 230, 230);
 }
+
+
 .login-form__input label {
     position: absolute;
     right: 10px;
@@ -125,3 +127,21 @@ header {
         justify-content: center;
     }
 }
+
+
+.error {
+    color: rgb(255, 0, 0);
+    font-size: 0.8rem;
+    margin: 2px;
+    position: relative;
+}
+
+input.error {
+    border: 2px solid red;
+    background-color: #FFD6D6;
+}
+
+input.valid {
+    border: 2px solid rgb(0, 206, 0); 
+    background-color: #D6FFD6; 
+  }

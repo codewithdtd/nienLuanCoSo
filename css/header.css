@@ -144,8 +144,41 @@ header {
     text-align: center;
     color: var(--text-color);
     text-decoration: none;
+    position: relative;
 }
 
+.login:hover .user {
+   display: block;
+}
+
+.user {
+    display: none;
+    position: absolute;
+    font-size: 1rem;
+    top: 100%;
+    text-align: left;
+    width: 200px;
+    right: 0;
+    background-color: #fff;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.4);
+    padding: 10px;
+}
+
+.user a {
+    color: #333;
+    text-decoration: none;
+    width: 200px;
+    display: block;
+}
+.user h4 {
+    padding: 0;
+    margin: 10px 0;
+}
+
+.user a:hover {
+    color: var(--primary-color);
+    background-color: #ececec;
+}
 
 .cart {
     position: relative;
