@@ -31,7 +31,7 @@
         <nav class="navbar__header navbar--login">
             <!-- logo -->
             <div class="navbar__logo">
-                <a class="navbar__logo-link" href="index.html">
+                <a class="navbar__logo-link" href="index.php">
                     <img src="image/logo.png" alt="" class="logo-img">
                 </a>
             </div>
@@ -40,7 +40,7 @@
             <div class="navbar__items">
                 <ul class="navbar__items-list">
                     <li class="navbar-list__item">
-                        <a class="navbar-list__item-link" href="index.html">TRANG CHỦ</a>
+                        <a class="navbar-list__item-link" href="index.php">TRANG CHỦ</a>
                     </li>
                     <li class="navbar-list__item">
                         <a class="navbar-list__item-link" href="about.html">GIỚI THIỆU</a>
@@ -59,7 +59,7 @@
         </nav>
     </header>
     <div class="register-page">
-        <form method="post" action="php/add_user.php" class="register-form">
+        <form method="post" action="add_user.php" class="register-form">
             <h1 class="register-form__title">Đăng ký</h1>
             
             <div class="register-form__input">
