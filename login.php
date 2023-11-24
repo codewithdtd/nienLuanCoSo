@@ -67,13 +67,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <a class="navbar-list__item-link" href="index.php">TRANG CHỦ</a>
                     </li>
                     <li class="navbar-list__item">
-                        <a class="navbar-list__item-link" href="about.html">GIỚI THIỆU</a>
+                        <a class="navbar-list__item-link" href="about.php">GIỚI THIỆU</a>
                     </li>
                     <li class="navbar-list__item">
                         <a class="navbar-list__item-link" href="product.php">SẢN PHẨM</a>
                     </li>
                     <li class="navbar-list__item">
-                        <a class="navbar-list__item-link" href="contact.html">LIÊN HỆ</a>
+                        <a class="navbar-list__item-link" href="contact.php">LIÊN HỆ</a>
                     </li>
                 </ul>
             </div>
