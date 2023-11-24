@@ -1,6 +1,6 @@
 <?php
 require_once 'connect.php';
-require_once 'gallery.php';
+require_once 'class/gallery.php';
 class Product {
 
     protected ?PDO $connect;

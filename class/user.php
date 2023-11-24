@@ -246,11 +246,12 @@ class User {
 
     //Hoa don nguoi dung
     public function addOrder(){
+        date_default_timezone_set('Asia/Ho_Chi_Minh');
         $madonhang = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
         $madonhang = date('dmy').substr(str_shuffle($madonhang),0,8);
 
-        $add_order = 'INSERT INTO ocake.orders(madonhang, user_id, fullname, phone_number, address, total_money) 
-                        VALUES (?, ?, ?, ?, ?, ?) ';
+        $add_order = 'INSERT INTO ocake.orders(madonhang, user_id, fullname, phone_number, address, pay_type, total_money) 
+                        VALUES (?, ?, ?, ?, ?, ?, ?) ';
         $statement = $this->connect->prepare($add_order);
         $statement->execute([
             $madonhang,
@@ -258,6 +259,7 @@ class User {
             $_POST['fullname'],
             $_POST['phone_number'],
             $_POST['address'],
+            $_POST['pt'],
             $_POST['total_money']
         ]);
 

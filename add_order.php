@@ -113,7 +113,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_newOrder'])) {
             <input type="text" class="user__address col-sm-8" name="address" value="" required>
         </div>
         <div class="">
-            <label for="address" class="col-sm-4">Sản phẩm:</label>  
+            <label for="address" class="col-sm-8">Phương thức thanh toán:</label>  
+            <div class="text-center col-sm-8">COD<input type="radio" name="pt" value="cod" required>     Chuyển khoản<input type="radio" name="pt" value="Chuyển khoản" required></div>
+        
         </div>
         <div class="">
             <label for="total" class="col-sm-4">Tổng tiền:</label>

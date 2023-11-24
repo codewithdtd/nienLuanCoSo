@@ -98,7 +98,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <label for="address">Địa chỉ:</label>
                         <textarea name="address" class="payment__body__info__form__address"><?= $user->getAddress() ?></textarea>
                         <label for="payment">Phương thức thanh toán:</label>
-                        <div class="text-center">COD<input type="radio" name="pt" value="cod">     Chuyển khoản<input type="radio" name="pt" value="card"></div>
+                        <div class="text-center">COD<input type="radio" name="pt" value="cod" required>     Chuyển khoản<input type="radio" name="pt" value="Chuyển khoản" required></div>
+                        <p style="font-size:0.8rem;">Chuyển khoản qua STK: 12312313 VIETCOMBANK</br>Nội dung: OCAKE-Số điện thoại-Họ tên</br> (VD: OCAKE-0123456789-DOTHANHDAT)</p>
                         <input required type="hidden" value="<?= $total_money ?>" name="total_money">
                                 
                         <button class="payment__button">Xác nhận đặt hàng</button>
@@ -110,58 +111,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
     </main>
 
-    <footer>
-        <div class="footer-info">
-            <div class="footer">
-                <h4 class="footer__title">Thông tin cửa hàng</h4>
-                <ul class="footer__list">
-                    <li>Địa chỉ: phường Xuân Khánh, quận Ninh Kiểu, thành phố Cần Thơ</li>
-                    <li>Giờ mở cửa: 8h - 21h</li>
-                    <li>Số điện thoại: 0123 456 789</li>
-                    <li>Email: ohCakeBekery@cake.com</li>
-                </ul>
-            </div>
-            <div class="footer">
-                <h4 class="footer__title">Danh mục</h4>
-                <ul class="footer__list">
-                    <li>Trang chủ</li>
-                    <li>Giới thiệu</li>
-                    <li>Sản phẩm</li>
-                    <li>Liên hệ</li>
-                </ul>
-            </div>
-            <div class="footer">
-                <h4 class="footer__title">Mạng xã hội</h4>
-                <ul class="footer__list">
-                    <li>
-                        <i class="ri-facebook-circle-line"></i>
-                        Facebook
-                    </li>
-                    <li>
-                        <i class="ri-instagram-line"></i>
-                        Instagram
-                    </li>
-                    <li>
-                        <i class="ri-tiktok-line"></i>
-                        Tiktok
-                    </li>
-                </ul>
-            </div>
-            <div class="footer">
-                <h4>Phương thức thanh toán</h4>
-                <div class="footer__paying">
-                    <img src="image/thanh_toan/8543_13-06-2016_Tienmat_Icon_big-2.png" alt="" class="footer__paying-img">
-                    <img src="image/thanh_toan/MoMo_Logo.png" alt="" class="footer__paying-img">
-                    <img src="image/thanh_toan/Mastercard-logo.svg.png" alt="" class="footer__paying-img">
-                    <img src="image/thanh_toan/visa-payment-card1873.jpg" alt="" class="footer__paying-img">
-                </div>
-            </div>
-        </div>
-
-        <div class="copyright">
-            <p>Copyright &copy 2023, Cửa hàng bánh OCake</p>
-        </div>
-    </footer>
+   <?php require_once 'footer.php' ?>
     
     <script src="js/main.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

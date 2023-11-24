@@ -77,7 +77,8 @@ if(isset($_POST['sort'])) {
         <!-- <div class="col-sm-2 products__list__item ">Họ Tên</div> -->
         <div class="col-sm-2 products__list__item ">Số điện thoại</div>
         <div class="col-sm-2 products__list__item ">Địa chỉ</div>
-        <div class="col-sm-2 products__list__item ">Ngày đặt hàng</div>
+        <div class="col-sm-1 products__list__item ">Ngày đặt hàng</div>
+        <div class="col-sm-1 products__list__item ">Thanh toán</div>
         <div class="col-sm-1 products__list__item ">Tổng tiền</div>
         <div class="col-sm-1 products__list__item ">Trạng thái</div>
 
@@ -90,7 +91,8 @@ if(isset($_POST['sort'])) {
         <!-- <div class="col-sm-2 products__list__item border"><?php echo htmlspecialchars($order['fullname']) ?></div> -->
         <div class="col-sm-2 products__list__item border"><?php echo htmlspecialchars($order['phone_number']) ?></div>
         <div class="col-sm-2 products__list__item border"><?php echo htmlspecialchars($order['address']) ?></div>
-        <div class="col-sm-2 products__list__item border"><?php echo htmlspecialchars($order['order_date']) ?></div>
+        <div class="col-sm-1 products__list__item border"><?php echo htmlspecialchars($order['order_date']) ?></div>
+        <div class="col-sm-1 products__list__item border"><?php echo htmlspecialchars($order['pay_type']) ?></div>
         <div class="col-sm-1 products__list__item border"><?php echo htmlspecialchars(number_format($order['total_money'])) ?></div>
         <div class="col-sm-1 products__list__item border"><?php echo htmlspecialchars($order['status']) ?></div>
         <div class="col-sm-1 products__list__item order__list__item--action">
