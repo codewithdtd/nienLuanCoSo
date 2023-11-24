@@ -1,4 +1,20 @@
+<?php 
+require_once 'connect.php';
+require_once 'user.php';
+session_start();
 
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $user = new User($conn);
+    $user->addUser();
+    $user->fill($_POST);
+    if(isset($_SESSION['error_message'])){
+        echo "<div class='error_register'>".$_SESSION["error_message"]."</div>";
+        unset($_SESSION["error_message"]);
+    }
+    else
+        header("Location:login.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,13 +36,7 @@
     <title>Đăng ký</title>
 </head>
 <body>
-    <?php 
-        session_start();
-        if(isset($_SESSION["error_message"])){
-            echo "<div class='error_register'>".$_SESSION["error_message"]."</div>";
-            unset($_SESSION["error_message"]);
-        }
-    ?>
+    
     <header class="header">
         <nav class="navbar__header navbar--login">
             <!-- logo -->
@@ -46,7 +56,7 @@
                         <a class="navbar-list__item-link" href="about.html">GIỚI THIỆU</a>
                     </li>
                     <li class="navbar-list__item">
-                        <a class="navbar-list__item-link" href="product.html">SẢN PHẨM</a>
+                        <a class="navbar-list__item-link" href="product.php">SẢN PHẨM</a>
                     </li>
                     <li class="navbar-list__item">
                         <a class="navbar-list__item-link" href="contact.html">LIÊN HỆ</a>
@@ -59,7 +69,14 @@
         </nav>
     </header>
     <div class="register-page">
-        <form method="post" action="add_user.php" class="register-form">
+        <form method="post" action="" class="register-form">
+            <?php 
+            // session_start();
+                if(isset($_SESSION["error_message"])){
+                    echo "<div class='error_register'>".$_SESSION["error_message"]."</div>";
+                    unset($_SESSION["error_message"]);
+                }
+            ?>
             <h1 class="register-form__title">Đăng ký</h1>
             
             <div class="register-form__input">
@@ -72,7 +89,7 @@
             </div>
         
             <div class="register-form__input">
-                <label for="email">Email:</label>
+                <label for="email">Email: (Nếu có)</label>
                 <input type="text" class="user__email" name="email" placeholder="Nhập email">
             </div>
             <div class="register-form__input">
@@ -98,7 +115,7 @@
             <button class="register-form__submit" type="submit">Đăng ký</button>
             <div class="login-link">
                 <span>Bạn đã có tài khoản</span>
-                <a href="login.html">Đăng nhập</a>
+                <a href="login.php">Đăng nhập</a>
             </div>
         </form>
     </div>

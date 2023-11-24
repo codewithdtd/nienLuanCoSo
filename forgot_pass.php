@@ -1,3 +1,11 @@
+<?php 
+require_once 'user.php';
+session_start();
+unset($_SESSION['id_user']);    
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $_SESSION['success']="Mật khẩu mới đã được gửi qua số điện thoại của bạn";
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +23,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;700&family=Pacifico&display=swap" rel="stylesheet">
-    <title>Đăng nhập</title>
+    <title>Quên mật khẩu</title>
 </head>
 <body>
     <header class="header">
@@ -37,7 +45,7 @@
                         <a class="navbar-list__item-link" href="about.html">GIỚI THIỆU</a>
                     </li>
                     <li class="navbar-list__item">
-                        <a class="navbar-list__item-link" href="product.html">SẢN PHẨM</a>
+                        <a class="navbar-list__item-link" href="product.php">SẢN PHẨM</a>
                     </li>
                     <li class="navbar-list__item">
                         <a class="navbar-list__item-link" href="contact.html">LIÊN HỆ</a>
@@ -50,28 +58,22 @@
         </nav>
     </header>
     <div class="login-page">
-        <form method="post" action="login.php" class="login-form">
-            <h1 class="login-form__title">Đăng nhập</h1>
+        <form method="post" class="login-form">
+            <?php if(isset($_SESSION['success'])){
+                        echo '<p style="padding:30px 0;background-color:#c0ffb8;margin-bottom:10px;font-size:0.8rem;color:green;">'.$_SESSION['success'].'</p>'; 
+                        unset($_SESSION['success']);
+            }
+                    ?>
+            <h1 class="login-form__title">Quên mật khẩu</h1>
             <div class="login-form__input">
-                <label for="user__phone"><i class="ri-user-fill"></i></label>
-                <input type="text" class="user__phone" name="phone" placeholder="Nhập số điện thoại">
+                <label for="user__phone"><i class="ri-phone-fill"></i></label>
+                <input required type="text" class="user__phone" name="phone" placeholder="Nhập số điện thoại">
             </div>
-            <div class="login-form__input">
-                <label for="user__password"><i class="ri-lock-fill"></i></label>
-                <input type="password" class="user__password" name="password" placeholder="Nhập mật khẩu ">
-            </div>
-            
-            <div class="login-form__remember">
-                <div class="remember">
-                    <input type="checkbox" name="login-checkbox">
-                    <label for="login-checkbox">Ghi nhớ đăng nhập</label>
-                </div>
-                <a href="" class="forgot-password">Quên mật khẩu?</a>
-            </div>
-            <button class="login-form__submit">Đăng nhập</button>
+           
+            <button class="login-form__submit">Gửi</button>
             <div class="register-link">
-                <span>Bạn chưa có tài khoản?</span>
-                <a href="register.php">Đăng ký ngay</a>
+                <span>Quay về</span>
+                <a href="login.php">Đăng nhập</a>
             </div>
         </form>
     </div>
@@ -80,6 +82,6 @@
     <script src="js/main.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
-    <script type="text/javascript" src="js/validate_form.js"></script>
+    <!-- <script type="text/javascript" src="js/validate_form.js"></script> -->
 </body>
 </html>

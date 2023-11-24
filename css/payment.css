@@ -17,7 +17,7 @@ main {
     background-color: var(--primary-color);
     align-items: center;
     color: #fff;
-    height: 30px;
+    height: fit-content;
     text-align: center;
 }
 .cart-page__title p {
@@ -37,8 +37,8 @@ main {
     justify-content: center;
     align-items: center;
     text-align: center;
-    box-shadow: 1px 1px 10px rgb(136, 136, 136) ;
-    background-color: #e3e3e3;
+    box-shadow: 1px 1px 10px rgb(112, 112, 112) ;
+    background-color: #e5e5e5;
     height: 160px;
 }
 
@@ -65,34 +65,14 @@ main {
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 .cart-page__items__quanlity p {
     margin: 0;
-    padding: 0 10px;
-}
-
-.cart-page__items__quanlity form {
-    display: flex;
-    margin: 0;
-    padding: 0;
-    height: fit-content;
-}
-
-.cart-page__items__quanlity form p {
-    border: 2px solid #333;
-    margin: 0;
-}
-.cart-page__items__delete {
-    color: #333;
-    text-decoration: none;
-    font-size: 1.4rem;
-    cursor: pointer;
-}
-
-.cart-page__items__delete:hover {
-    color: var(--primary-color);
+    background-color: #fff;
+    width: 20px;
+    height: 20px;
 }
 
 .cart__page__total{
@@ -116,9 +96,8 @@ main {
 }
 
 .cart__page__total__button:hover {
-    border: 2px solid var(--primary-color);
-    color: var(--primary-color);
-    background-color: #fff;
+    color: #fff;
+    opacity: 0.8;
 }
 
 .footer {
@@ -140,8 +119,8 @@ main {
 
     
     .col-sm-4.cart-page__items__quanlity {
-        max-width: fit-content;
-        display: inline;
+        max-width: 100px;
+        flex-direction: row;
         height: fit-content;
     }
     .col-sm-2.cart-page__items__price {
@@ -154,3 +133,32 @@ main {
     }
 }
 
+.payment__body__info{
+    /* background-color: rgb(247, 164, 87); */
+}
+.payment__body__info__form__title{
+    text-align: center;
+}
+.payment__body__info__form{
+    display: flex;
+    flex-direction: column;
+}
+
+.payment__method {
+    text-align: center;
+}
+.payment__button {
+    height: 50px;
+    background-color: var(--primary-color);
+    border: none;
+    color: #fff;
+    border-radius: 30px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.payment__button:hover {
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    background-color: #fff;
+}

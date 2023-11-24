@@ -1,0 +1,129 @@
+.products {
+    font-size: 0.9rem;
+}
+
+.products_add {
+    color: var(--primary-color);
+    text-decoration: none;
+    border: 2px solid var(--primary-color);
+    margin-bottom: 20px;
+    display: block;
+    width: fit-content;
+    padding: 6px;
+    background-color: #fff;
+}
+
+.products_add:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+    cursor: pointer;
+}
+
+.products__title {
+    list-style: none;
+    padding-left: 0;
+    background-color: var(--primary-color);
+    align-items: center;
+    color: #fff;
+    height: fit-content;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.products__list {
+    box-shadow: 1px 1px 10px rgb(136, 136, 136) ;
+    background-color: #ffffff;
+    height: fit-content; 
+}
+
+.products__list__item {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.products__list__item p {
+    /* width: 100%; */
+    padding-top: 10px;
+    margin: 0;
+    line-height: 0.8rem;
+    font-size: 0.8rem;
+}
+
+
+.products__list__item__description {
+    overflow: hidden;
+    line-height: 1rem;
+    text-overflow: ellipsis;
+    height: 3.5rem;
+    -webkit-line-clamp: 3;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    text-align: left;
+    padding: 10px;
+}
+
+.products__list__action {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.products__list__action__edit a{
+    color: #333;
+    text-decoration: none;
+}
+
+.products__list__action__edit:hover a {
+    color: var(--primary-color);
+}
+
+.products__list__action__edit:hover {
+    border-color: var(--primary-color);
+}
+
+.products__list__action__delete button {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.products__list__action__delete:hover {
+    opacity: 0.8;
+}
+
+
+.order__list__item--action button{
+    display: inline;
+}
+
+.order__list__item--action button a {
+    color: #333;
+    text-decoration: none;
+}
+
+.order__list__item--action a{
+    display: block;
+    width: 100%;
+    height: fit-content;
+}
+
+.order__list__item--action .delete{
+    background-color: var(--primary-color);
+}
+
+/* .add-cart {
+    background-color: aqua;
+    position: absolute;
+    right: 0;
+    width: fit-content;
+    height: fit-content;
+    padding: 10px 0;
+    display: block;
+    right: 100%;
+} */

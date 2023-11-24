@@ -1,0 +1,84 @@
+.home {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.statistic {
+    background-color: #fff;
+    margin: 20px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 1px 5px 10px rgba(0,0,0,0.5);
+    border-left: 5px solid red;
+    height: 100px;
+    line-height: 1rem;
+}
+
+/* .row {
+    justify-content: center;
+} */
+
+.statistic h4 {
+    padding-top: 10px;
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.statistic p {
+    font-size: 2rem;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.statistic i {
+    color: rgb(44, 163, 242);
+}
+.statistic span {
+    font-size: 0.8rem;
+    text-align: center;
+} 
+
+.doanhthu {
+    background-color: #fff;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 1px 5px 10px rgba(0,0,0,0.5);
+    border-left: 5px solid red;
+    width: 90%;
+    margin-bottom: 50px;
+}
+
+.doanhthu h4 {
+    padding-top: 10px;
+    color: var(--primary-color);
+    font-weight: 600;
+
+}
+
+.doanhthu p {
+    padding-top: 10px;
+    font-weight: 600;
+    font-size: 3rem;
+    text-align: center;
+}
+
+.doanhthu i {
+    color: rgb(61, 201, 58);
+}
+
+.title {
+    padding: 20px;
+    background-color: #ffffff;
+    border: 2px solid red;
+    border-radius: 10px;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.title h3 {
+    font-weight: 600;
+}

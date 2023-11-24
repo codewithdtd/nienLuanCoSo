@@ -2,6 +2,7 @@
 footer {
     background-color: #e5e5e5;
     padding: 20px;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 .footer-info {
@@ -12,10 +13,18 @@ footer {
 .footer__list{
     list-style: none;
     padding-left: 0;
+    font-family: 'Josefin Sans', sans-serif;
+
 }
 
-.footer__list li:hover {
+.footer__list li:hover, .footer__list a:hover {
     color: var(--primary-color);
+}
+
+.footer__list a{
+    text-decoration: none;
+    color: #333;
+    /* font-family: 'Josefin Sans', sans-serif; */
 }
 
 .footer__paying {

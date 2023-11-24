@@ -283,6 +283,11 @@ header {
     font-weight: 500;
 }
 
+.home-left__btn a{
+    text-decoration: none;
+    color: #fff;
+}
+
 .home-left__btn:hover {
     background-color: #d52e2e;
 }

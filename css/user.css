@@ -1,0 +1,72 @@
+body {
+    padding-top: 120px;
+    padding-left: 0;
+    height: 100vh;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+#back {
+    display: none;
+}
+.register-form {
+    background-color: rgb(228, 228, 228);
+    height: 50vh;
+    font-family: 'Josefin Sans', sans-serif;
+    padding-top: 20px;
+    border-radius: 20px;
+}
+
+.action-user {
+    position: relative;
+    top: 0;
+    /* background-color: rgb(255, 44, 44); */
+    height: 50vh;
+    padding-top: 20px;
+    font-family: 'Josefin Sans', sans-serif;
+    margin-bottom: 20px;
+
+}
+
+.action-user a {
+    color: #333;
+    text-decoration: none;
+    padding: 5px 10px;
+    margin: 10px 5px;
+    /* background-color: #efefef; */
+    /* border-radius: 20px; */
+    border-left: 4px solid #8e8e8e;
+    border-bottom: 1px solid #8e8e8e;
+}
+
+.action-user a:hover {
+    background-color: rgb(255, 236, 236);
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+
+.register-form {
+    position: absolute;
+    text-align: center;
+}
+ 
+.change_password {
+    position: absolute;
+    background-color: rgb(228, 228, 228);
+    text-align: center;
+    height: 50vh;
+    border-radius: 25px;
+    font-family: 'Josefin Sans', sans-serif;
+    padding-top: 20px;
+}
+
+.order_detail {
+    position: absolute;
+    background-color: rgb(228, 228, 228);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    height: 50vh;
+    overflow: auto;
+}

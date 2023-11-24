@@ -10,6 +10,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if(isset($_SESSION['error_message']))
         header('Location: register.php');
     else
-        header("Location:login.html");
+        header("Location:login.php");
 }
 ?>
