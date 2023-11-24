@@ -73,7 +73,8 @@
 .title {
     padding: 20px;
     background-color: #ffffff;
-    border: 2px solid red;
+    border: 1px solid rgb(255, 149, 149);
+    box-shadow: 1px 5px 10px rgba(0,0,0,0.5);
     border-radius: 10px;
     color: var(--primary-color);
     text-align: center;

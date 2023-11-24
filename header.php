@@ -1,7 +1,7 @@
 <?php
-require_once 'user.php';
-require_once 'product_class.php';
-require_once 'gallery.php';
+require_once 'class/user.php';
+require_once 'class/product_class.php';
+require_once 'class/gallery.php';
 
 if(isset($_SESSION['id_user'])){
     $id_user = $_SESSION['id_user']; 
@@ -72,7 +72,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['search_product'])) {
                         <a class="navbar-list__item-link" href="product.php">SẢN PHẨM</a>
                     </li>
                     <li class="navbar-list__item">
-                        <a class="navbar-list__item-link" href="contact.html">LIÊN HỆ</a>
+                        <a class="navbar-list__item-link" href="contact.php">LIÊN HỆ</a>
                     </li>
                 </ul>
             </div>

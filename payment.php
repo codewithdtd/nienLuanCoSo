@@ -1,6 +1,6 @@
 <?php 
 session_start();
-require_once 'user.php';
+require_once 'class/user.php';
 
 $user = new User($conn);
 
@@ -17,6 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $carts = $user->getAllCart($user_id);
     $user->deleteAllOrderDetail($id);
     header('Location:index.php');
+    exit();
 }
 
 ?>
@@ -96,6 +97,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <input required type="text" name="phone_number" value="<?= $user->getPhone_number() ?>">
                         <label for="address">Địa chỉ:</label>
                         <textarea name="address" class="payment__body__info__form__address"><?= $user->getAddress() ?></textarea>
+                        <label for="payment">Phương thức thanh toán:</label>
+                        <div class="text-center">COD<input type="radio" name="pt" value="cod">     Chuyển khoản<input type="radio" name="pt" value="card"></div>
                         <input required type="hidden" value="<?= $total_money ?>" name="total_money">
                                 
                         <button class="payment__button">Xác nhận đặt hàng</button>

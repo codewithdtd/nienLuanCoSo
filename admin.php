@@ -120,6 +120,9 @@ else
                         case 'home' :
                             require_once "statistic.php";
                             break;
+                        case 'phanhoi' :
+                            require_once "feedback.php";
+                            break;
                         default:
                             require_once "statistic.php";
                             break;

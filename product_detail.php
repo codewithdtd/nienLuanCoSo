@@ -1,7 +1,7 @@
 <?php 
 session_start();
-require_once 'product_class.php';
-require_once 'gallery.php';
+require_once 'class/product_class.php';
+require_once 'class/gallery.php';
 
 $product = new Product($conn);
 $gallery = new Gallery($conn);

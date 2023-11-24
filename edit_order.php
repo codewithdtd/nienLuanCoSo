@@ -43,7 +43,7 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
 ?>
     
 <span class="offset-2">
-    <a href="admin.php?nav=donhang" id="back">Quay lại</a>
+    <a href="admin.php?nav=donhang" id="back" class="btn btn-primary">Quay lại</a>
 </span>
 <form method="post" class="offset-2 sregister-form">
     <h1 class="register-form__title">Chỉnh sửa thông tin đơn hàng</h1>

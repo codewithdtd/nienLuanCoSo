@@ -1,6 +1,6 @@
 <?php 
 require_once 'connect.php';
-require_once 'product_class.php';
+require_once 'class/product_class.php';
 
 $product = new Product($conn);
 $categorys = $product->getCategory();
@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 ?>
 <span class="offset-3">
-    <a href="#" id="back">Quay lại</a>
+    <a href="admin.php?nav=sanpham" id="back" class="btn btn-primary">Quay lại</a>
 </span>
 <div class="offset-sm-3">
     <h2>Thêm sản phẩm</h2>
@@ -63,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <input type="file" name="image[]" class="product_form__items__image col-sm-5" required accept="image/*" multiple>
         </div>
         <div class="image_review"></div>
-        <button type="submit">Đăng tải</button>
+        <button type="submit" class="btn btn-primary">Đăng tải</button>
     </form>
 </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -94,4 +94,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             });
         });
     </script>
-    <script src="js/back.js"></script>
+  

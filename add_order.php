@@ -1,9 +1,9 @@
 <?php 
 require 'connect.php';
-require_once 'user.php';
+require_once 'class/user.php';
 
-require_once 'product_class.php';
-require_once 'gallery.php';
+require_once 'class/product_class.php';
+require_once 'class/gallery.php';
 $product = new Product($conn);
 $gallerys = new Gallery($conn);
 
@@ -63,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_newOrder'])) {
 ?>
     
 <span class="offset-2">
-    <a href="admin.php?nav=donhang" id="back">Quay lại</a>
+    <a href="admin.php?nav=donhang" id="back" class="btn btn-primary">Quay lại</a>
 </span>
 <div class="offset-2 row">
     <?php if(isset($_SESSION['add_order'])): ?>
@@ -132,8 +132,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_newOrder'])) {
                 </button>
             </div>
             <div class="modal-body">
-                <input type="text" placeholder="Tìm kiếm">
-                <button name="search">Tìm</button>
                 <?php foreach ($list as $sp): ?>
                 <form action="add_cart.php" method="post" class="add row">
                     <input type="hidden" name="id_user" value="12">

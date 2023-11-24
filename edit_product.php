@@ -1,7 +1,7 @@
 <?php
 
-require_once 'product_class.php';
-require_once __DIR__.'/gallery.php';
+require_once 'class/product_class.php';
+require_once __DIR__.'/class/gallery.php';
 
 $product = new Product($conn);
 $gallery = new Gallery($conn);
@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
 <span class="offset-3">
-    <a href="admin.php?nav=sanpham" id="back">Quay lại</a>
+    <a href="admin.php?nav=sanpham" id="back" class="btn btn-primary">Quay lại</a>
 </span>
 <div class="offset-3">
 
@@ -76,15 +76,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <input required type="file" name="image[]" class="product_form__items__image" accept="image/*" multiple>
         </div>
         <div class="image_review--one"></div>
-        <button type="submit">Cập nhật</button>
+        <button type="submit" class="btn btn-success">Cập nhật</button>
     </form>
     <?php if($gallerys)
          foreach ($gallerys as $image): ?>
         <form method="post" action="delete.php">
             <div class="image_review">
                 <img src="<?= htmlspecialchars($image->thumbnail)?>" style="width:100px">
-                <input required type="hidden" value="<?= htmlspecialchars($image->id)?>" name="id">
-                <button type="submit">Xóa</button>
+                <input required type="hidden" value="<?= htmlspecialchars($image->id)?>" name="id_img">
+                <button type="submit" class="btn btn-danger">Xóa</button>
             </div>
         </form>
     <?php endforeach; ?>

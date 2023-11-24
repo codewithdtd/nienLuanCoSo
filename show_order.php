@@ -30,9 +30,9 @@ if( isset($_POST['search']) ) {
 if(isset($_POST['sort'])) {
     if($_POST['sort_name'] == 'name')
         if($_POST['sort_type'] == 'asc')
-            $sapxep = "SELECT * FROM orders WHERE fullname <> 'admin' ORDER BY fullname ASC";
+            $sapxep = "SELECT * FROM orders WHERE fullname <> 'admin' ORDER BY madonhang ASC";
         else
-            $sapxep = "SELECT * FROM orders WHERE fullname <> 'admin' ORDER BY fullname DESC";
+            $sapxep = "SELECT * FROM orders WHERE fullname <> 'admin' ORDER BY madonhang DESC";
     if($_POST['sort_name'] == 'day')
         if($_POST['sort_type'] == 'asc')
             $sapxep = "SELECT * FROM orders WHERE fullname <> 'admin' ORDER BY order_date ASC";
@@ -57,7 +57,7 @@ if(isset($_POST['sort'])) {
 </form>
 <form action="" method="post" class="offset-2 col-sm-10 py-2">
     <select class="h-100 col-auto" name="sort_name">
-        <option value="name">Tên</option>
+        <option value="name">Mã đơn hàng</option>
         <option value="day">Ngày đặt hàng</option>
     </select>
     <select class="h-100 col-auto" name="sort_type">
@@ -67,8 +67,8 @@ if(isset($_POST['sort'])) {
     <button class="btn btn-danger" name="sort">Sắp xếp</button>
 </form>
 
-<h4 class="offset-2 text-center">Đơn hàng</h4>
-<div class="col-sm-10 offset-2">
+<h4 class="text-center">Đơn hàng</h4>
+<div class="col-sm-10 offset-2 products">
     <div class="d-flex justify-content-between">
         <a class="products_add" href="admin.php?nav=themdonhang">+ Thêm mới</a>
     </div>
@@ -94,12 +94,10 @@ if(isset($_POST['sort'])) {
         <div class="col-sm-1 products__list__item border"><?php echo htmlspecialchars(number_format($order['total_money'])) ?></div>
         <div class="col-sm-1 products__list__item border"><?php echo htmlspecialchars($order['status']) ?></div>
         <div class="col-sm-1 products__list__item order__list__item--action">
-            <button class="edit">
-                <a href="admin.php?nav=suadonhang&id=<?=$order['id'] ?>">Sửa</a>
-            </button>  
-            <button class="delete">
-                <a href="delete.php?id_order=<?= $order['id']?>">Xóa</a>
-            </button></br>
+            <div>
+                <a href="admin.php?nav=suadonhang&id=<?=$order['id'] ?>" class="btn btn-warning"><i class="ri-edit-line"></i></a>
+                <a href="delete.php?id_order=<?= $order['id']?>" class="btn btn-danger"><i class="ri-delete-bin-line"></i></a>
+            </div></br>
             <a href="admin.php?nav=chitietdonhang&id=<?=$order['id'] ?>">Xem chi tiết</a>
         </div>
 

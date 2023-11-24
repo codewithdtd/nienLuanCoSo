@@ -1,10 +1,11 @@
 <?php 
-require_once 'user.php';
+require_once 'class/user.php';
 $user = new User($conn);
 
 if(isset($_GET['id'])) {
     $user->deleteCart($_GET['id']);
     header('Location: ' . $_SERVER['HTTP_REFERER']);
+    exit();
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -14,4 +15,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $user->updateCartDecrease($_POST['id']);
     
     header('Location:cart.php');
+    exit();
 }

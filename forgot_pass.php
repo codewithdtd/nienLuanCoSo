@@ -1,5 +1,5 @@
 <?php 
-require_once 'user.php';
+require_once 'class/user.php';
 session_start();
 unset($_SESSION['id_user']);    
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {

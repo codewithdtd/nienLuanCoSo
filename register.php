@@ -1,6 +1,6 @@
 <?php 
 require_once 'connect.php';
-require_once 'user.php';
+require_once 'class/user.php';
 session_start();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -11,8 +11,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo "<div class='error_register'>".$_SESSION["error_message"]."</div>";
         unset($_SESSION["error_message"]);
     }
-    else
+    else {
         header("Location:login.php");
+        exit();
+    }
 }
 ?>
 <!DOCTYPE html>

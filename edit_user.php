@@ -1,5 +1,5 @@
 <?php 
-require_once __DIR__.'/user.php';
+require_once __DIR__.'/class//user.php';
 
 $user = new User($conn);
 
@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'  && isset($_POST['update'])) {
 
 
     <span class="offset-2">
-        <a href="#" id="back">Quay lại</a>
+        <a href="admin.php?nav=khachhang" id="back" class="btn btn-primary">Quay lại</a>
     </span>
     <form method="post" class="offset-2 register-form col-10 text-center">
         <h1 class="register-form__title">Chỉnh sửa thông tin khách hàng</h1>
@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'  && isset($_POST['update'])) {
             <input required type="text" class="user__address col-sm-6" name="address" value="<?= htmlspecialchars($user->getAddress()) ?>">
         </div>
 
-        <button class="register-form__submit m-4" type="submit" name="update">Cập nhật</button>
+        <button class="register-form__submit m-4 btn btn-primary" type="submit" name="update">Cập nhật</button>
     </form>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

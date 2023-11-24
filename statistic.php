@@ -1,7 +1,7 @@
 <?php 
 require_once 'connect.php';
-require_once 'product_class.php';
-require_once 'user.php';
+require_once 'class/product_class.php';
+require_once 'class/user.php';
 
 $sanpham = new Product($conn);
 $sanpham = $sanpham->getAllProducts();
@@ -38,6 +38,9 @@ $donhangmoi_count = count($statement->fetchAll());
 
 ?>
 <div class="offset-1 home">
+    <div class="row title col-sm-9 m-4">
+        <h3>Chào Mừng Đến Với Trang Quản Lý</h3>
+    </div>
     <div class="row">
         <div class="col-sm-2 statistic">
             <h4>Khách hàng</h4>
@@ -58,8 +61,5 @@ $donhangmoi_count = count($statement->fetchAll());
     <div class="row doanhthu col-sm-9">
       <h4 class="py-3">Tổng Doanh Thu</h4>
       <p><?= number_format($doanhthu) ?> <i class="ri-money-dollar-circle-fill"></i></p>
-    </div>
-    <div class="row title col-sm-9">
-        <h3>Chào Mừng Đến Với Trang Quản Lý</h3>
     </div>
 </div>

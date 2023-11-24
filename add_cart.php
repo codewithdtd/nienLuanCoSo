@@ -1,5 +1,5 @@
 <?php
-require_once 'user.php';
+require_once 'class/user.php';
 $user = new User($conn);
 
 
@@ -38,4 +38,5 @@ if(isset($_POST['id_product'])){
     $user->addcart($order);
 
     header('Location: ' . $_SERVER['HTTP_REFERER']);
+    exit();
 }

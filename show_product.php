@@ -1,6 +1,6 @@
 <?php 
-require_once 'product_class.php';
-require_once 'gallery.php';
+require_once 'class/product_class.php';
+require_once 'class/gallery.php';
 
 if(isset($_SESSION['success'])){
     echo '<p class="offset-3 success_message">'.$_SESSION['success'].'</p>';

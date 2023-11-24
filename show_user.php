@@ -1,5 +1,5 @@
 <?php  
-require_once __DIR__.'/user.php';
+require_once __DIR__.'/class/user.php';
 $user = new User($conn);
 $users = $user->getAllUser();
 
@@ -68,7 +68,7 @@ if(isset($_POST['sort'])) {
         </select>
         <button class="btn btn-danger" name="sort">Sắp xếp</button>
     </form>
-    <h4 class="offset-2 text-center">Khách hàng</h4>
+    <h4 class="text-center">Khách hàng</h4>
     <div class="col-sm-10 offset-2 products">
         <ul class="products__title row">
             <li class="col-sm-1">STT</li>
@@ -89,15 +89,16 @@ if(isset($_POST['sort'])) {
             <div class="col-sm-2 products__list__item border"><?php echo htmlspecialchars($user->birthday) ?></div>
             <div class="col-sm-2 products__list__item border"><?php echo htmlspecialchars($user->address) ?></div>
             <div class="col-sm-1 products__list__action">
-                <button class="products__list__action__edit">
-                    <a href="<?= 'admin.php?nav=suakhachhang&id='.htmlspecialchars($user->id)?>">Sửa</a>
-                </button>
-                <form method="post" action="delete.php">
-                    <div class="products__list__action__delete">
-                        <input type="hidden" value="<?= htmlspecialchars($user->id)?>" name="id_user">
-                        <button type="submit">Xóa</button>
-                    </div>
-                </form>
+                <div>
+                    <a href="<?= 'admin.php?nav=suakhachhang&id='.htmlspecialchars($user->id)?>" class="btn btn-warning"><i class="ri-edit-line"></i></a>
+                
+                    <form method="post" action="delete.php">
+                        <div class="products__list__action__delete">
+                            <input type="hidden" value="<?= htmlspecialchars($user->id)?>" name="id_user">
+                            <button type="submit" class="btn btn-danger"><i class="ri-delete-bin-line"></i></button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     <?php endforeach; ?>
