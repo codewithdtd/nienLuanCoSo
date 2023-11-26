@@ -103,7 +103,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <input required type="hidden" value="<?= $total_money ?>" name="total_money">
                                 
                         <button class="payment__button">Xác nhận đặt hàng</button>
-                        <p>Đơn hàng sẽ được giao sau 15 phút!</p>
+                        <p>Đơn hàng sẽ sớm được hoàn thành!</p>
                         <p>Cảm ơn quý khách vì đã chọn OCake nếu có bất kỳ thắc mắc nào vui lòng liên hệ hotline: 0123 456 789</p>
                     </form>
                 </div>

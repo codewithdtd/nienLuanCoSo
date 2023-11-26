@@ -47,9 +47,29 @@ if(isset($_POST['sort'])) {
 
 // 
 if(isset($_POST['done'])) {
+    $note = 'Quên mật khẩu';
+    $stmt = $conn->prepare('SELECT * FROM feedback WHERE id = ? AND note = ?');
+    $stmt->execute([$_POST['done'],$note]);
+    $exist = $stmt->fetch();
+    if($exist != null) {
+        $new_pass = 'abcdefghijklmnopqrstuvwxyz';
+        $new_pass = substr(str_shuffle($new_pass),0,8);
+        $stmt = $conn->prepare('UPDATE user SET password = ? WHERE phone_number = ?'); 
+        $stmt->execute([$new_pass, $exist['phone']]);
+        $stmt = $conn->prepare('UPDATE feedback SET note = ? WHERE id = ?');
+        $stmt->execute(['Đã xử lý'.' Mật khẩu mới là: '.$new_pass, $_POST['done']]);
+    }
+
     $stmt = $conn->prepare('UPDATE feedback SET status = ? WHERE id = ?');
     $stmt->execute(['Đã xử lý', $_POST['done']]);
+    echo '<script>window.location="admin.php?nav=phanhoi"</script>';
 }
+if(isset($_POST['delete'])) {
+    $stmt = $conn->prepare('DELETE FROM feedback WHERE id = ?');
+    $stmt->execute([$_POST['delete']]);
+    echo '<script>window.location="admin.php?nav=phanhoi"</script>';
+}
+
 ?>
 
 
@@ -81,7 +101,7 @@ if(isset($_POST['done'])) {
         <li class="col-sm-2 products__list__item ">Số điện thoại</li>
         <li class="col-sm-3 products__list__item ">Phản hồi</li>
         <li class="col-sm-2 products__list__item ">Ngày hản hồi</li>
-        <li class="col-sm-2 products__list__item ">Trạng thái</li>
+        <li class="col-sm-1 products__list__item ">Trạng thái</li>
 
     </ul>
     <?php if(isset($orders)): ?>
@@ -92,9 +112,10 @@ if(isset($_POST['done'])) {
         <div class="col-sm-2 products__list__item border"><?php echo htmlspecialchars($order['phone']) ?></div>
         <div class="col-sm-3 products__list__item border"><?php echo htmlspecialchars($order['note']) ?></div>
         <div class="col-sm-2 products__list__item border"><?php echo htmlspecialchars($order['created_at']) ?></div>
-        <div class="col-sm-2 products__list__item border"><?php echo htmlspecialchars($order['status']) ?></div>
-        <div class="col-sm-1 products__list__item order__list__item--action">
+        <div class="col-sm-1 products__list__item border"><?php echo htmlspecialchars($order['status']) ?></div>
+        <div class="col-sm-2 products__list__item order__list__item--action">
             <form method="post">
+                <button class="btn btn-danger" name="delete" value="<?= $order['id'] ?>"><i class="ri-delete-bin-line"></i></button>
                 <button class="btn btn-success" name="done" value="<?= $order['id'] ?>"><i class="ri-check-line"></i></button>
             </form>  
         </div>

@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once 'connect.php';
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $statement = $conn->prepare('INSERT INTO ocake.feedback(name,phone,note) VALUES (? ,? ,?)');
@@ -30,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 <body>
    <?php require_once 'header.php'; ?>
-    <div class="container text-center" style="padding-top: 100px; background-color: rgb(228, 228, 228);">
+    <div class="container text-center" style="padding-top: 120px; background-color: rgb(228, 228, 228);">
         <form method="post">
             <h3>Liên hệ</h3>
             <div class="row m-3">

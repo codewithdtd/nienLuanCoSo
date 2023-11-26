@@ -69,6 +69,7 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
             <option value="Chưa giao">Chưa giao</option>
             <option value="Sẵn sàng">Sẵn sàng</option>
             <option value="Đã giao">Đã giao</option>
+            <option value="Đã hủy">Đã hủy</option>
         </select>
         <!-- <input required type="text" class="user__address col-sm-6" name="status" value=""> -->
     </div>

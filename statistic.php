@@ -34,12 +34,25 @@ $statement->execute();
 
 $donhangmoi_count = count($statement->fetchAll());
 
+$sql = "SELECT DATE(order_date) AS ngay_mua, SUM(total_money) AS tong_gia_tien
+FROM orders WHERE DATE(order_date) BETWEEN CURDATE() - INTERVAL 6 DAY AND CURDATE()
+GROUP BY DATE(order_date)";
+
+try {
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+
+    // Mảng để lưu trữ dữ liệu cho biểu đồ
+    $dataPoints = $stmt->fetchAll(PDO::FETCH_ASSOC);
+} catch (PDOException $e) {
+    echo "Lỗi truy vấn: " . $e->getMessage();
+}
 
 
 ?>
 <div class="offset-1 home">
     <div class="row title col-sm-9 m-4">
-        <h3>Chào Mừng Đến Với Trang Quản Lý</h3>
+        <h3>Thống kê</h3>
     </div>
     <div class="row">
         <div class="col-sm-2 statistic">
@@ -62,4 +75,34 @@ $donhangmoi_count = count($statement->fetchAll());
       <h4 class="py-3">Tổng Doanh Thu</h4>
       <p><?= number_format($doanhthu) ?> <i class="ri-money-dollar-circle-fill"></i></p>
     </div>
+    <canvas class="row" id="myChart" width="400" height="200"></canvas>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3"></script>
+
+    <script>
+    // Dữ liệu từ PHP được chuyển đổi thành JavaScript
+    var dataPoints = <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>;
+
+    // Tạo biểu đồ cột
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: dataPoints.map(data => data.ngay_mua),
+            datasets: [{
+                label: 'Tổng giá tiền',
+                data: dataPoints.map(data => data.tong_gia_tien),
+                backgroundColor: 'rgb(255, 30, 31, 0.5)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+    </script>

@@ -1,9 +1,12 @@
 <?php 
+require_once 'connect.php';
 require_once 'class/user.php';
 session_start();
 unset($_SESSION['id_user']);    
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $_SESSION['success']="Mật khẩu mới đã được gửi qua số điện thoại của bạn";
+    $statement = $conn->prepare('INSERT INTO feedback(phone,note) VALUES (?, ?)');
+    $statement->execute([$_POST['phone'], $_POST['note'] ]);
+    $_SESSION['success']="Mật khẩu mới sẽ được gửi qua số điện thoại của bạn";
 }
 ?>
 <!DOCTYPE html>
@@ -68,6 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <div class="login-form__input">
                 <label for="user__phone"><i class="ri-phone-fill"></i></label>
                 <input required type="text" class="user__phone" name="phone" placeholder="Nhập số điện thoại">
+                <input type="hidden" name="note" value="Quên mật khẩu">
             </div>
            
             <button class="login-form__submit">Gửi</button>

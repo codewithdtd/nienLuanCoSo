@@ -1,5 +1,4 @@
 .home {
-    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -82,4 +81,10 @@
 
 .title h3 {
     font-weight: 600;
+}
+
+canvas {
+    max-height: 50%;
+    max-width: 50%;
+    background-color: #fff;
 }

@@ -73,7 +73,6 @@ if(isset($_POST['sort'])) {
 <form action="" method="post" class="offset-2 col-sm-10 py-2">
     <select class="h-100 col-auto" name="sort_name">
         <option value="price">Giá</option>
-        <option value="status">Số lượng</option>
     </select>
     <select class="h-100 col-auto" name="sort_type">
         <option value="desc">Cao xuống thấp</option>

@@ -113,7 +113,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['search_product'])) {
                                 <?php if(isset($all)) foreach($all as $each): ?>
                                     <p class="my-2">Đơn hàng <b><?= $each['madonhang']; ?></b> đã sẵn sàng</p>
                                 <?php endforeach; 
-                                if(!isset($all)) echo '<p class="my-2">Không có thông báo</p>';
+                                if(empty($all)) echo '<p class="my-2">Không có thông báo</p>';
                                 ?>
                                 
                             </div>

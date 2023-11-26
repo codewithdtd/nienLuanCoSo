@@ -6,12 +6,52 @@ $sql->execute();
 $danhmuc = $sql->fetchAll(PDO::FETCH_ASSOC);
 
 
-if($_SERVER['REQUEST_METHOD']=='POST'){
+if($_SERVER['REQUEST_METHOD']=='POST' && isset($_POST['name'])){
     $statement = $conn->prepare('INSERT INTO category(name) VALUES (?)');
     $statement->execute([$_POST['name']]);
     echo "<script>window.location='admin.php?nav=category';</script>";
 }
+
+
+
+// tìm kiếm
+if( isset($_POST['search']) ) {
+    // $products = (object)$products;
+            $statement = $conn->prepare('SELECT * FROM ocake.category where name like ?');
+            $statement->execute(['%'.$_POST['search'].'%']);
+            $row = $statement->fetchAll(PDO::FETCH_ASSOC);
+            $danhmuc = $row;
+
+}
+
+// sắp xếp
+if(isset($_POST['sort'])) {
+
+        if($_POST['sort_type'] == 'asc')
+            $sapxep = "SELECT * FROM category ORDER BY name ASC";
+        else
+            $sapxep = "SELECT * FROM category ORDER BY name DESC";
+    $stmt = $conn->prepare($sapxep);
+    $stmt->execute();
+    $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $danhmuc = $row;
+}
+
+
 ?>
+
+<form action="" method="post" class="offset-2 col-sm-10 py-2">
+    <input type="text" name="search" class="h-100 col-sm-5 search" placeholder="Tìm kiếm theo tên">
+    <button class="btn btn-danger">Tìm kiếm</button>
+</form>
+<form action="" method="post" class="offset-2 col-sm-10 py-2">
+    <select class="h-100 col-auto" name="sort_type">
+        <option value="desc">Cao xuống thấp</option>
+        <option value="asc">Thấp lên cao</option>
+    </select>
+    <button class="btn btn-danger" name="sort">Sắp xếp</button>
+</form>
+
 
 <div class="col-sm-10 offset-2 products">
     <h2>Danh mục</h2>
