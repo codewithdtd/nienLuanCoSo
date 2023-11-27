@@ -73,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
         <div class="product_form__items">
             <label for="image" class="col-sm-2">Hình ảnh:</label>
-            <input required type="file" name="image[]" class="product_form__items__image" accept="image/*" multiple>
+            <input type="file" name="image[]" class="product_form__items__image" accept="image/*" multiple>
         </div>
         <div class="image_review--one"></div>
         <button type="submit" class="btn btn-success">Cập nhật</button>
