@@ -14,7 +14,7 @@ while ($row = $statement->fetch()) {
 }
 ?>
 
-<a href="#" class="offset-2" id="back">Quay lại</a>
+<a href="admin.php?nav=donhang" class="offset-2" id="back">Quay lại</a>
 <div class="offset-4 col-6 bg-white row border border-dark p-4 justify-content-center">
     <div class="col-sm-8">
         <h4>CHI TIẾT ĐƠN HÀNG</h4>
@@ -47,4 +47,3 @@ while ($row = $statement->fetch()) {
 </div>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="js/back.js"></script>

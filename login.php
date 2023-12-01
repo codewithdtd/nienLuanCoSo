@@ -12,10 +12,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if(isset($_POST['login-checkbox'])) {
         $_SESSION['phone'] = $_POST['phone'];
         $_SESSION['password'] = $_POST['password'];
+        setcookie('phone',$_POST['phone'], time() + (86400*7),"/");
+        setcookie('pass',$_POST['password'], time() + (86400*7),"/");
     }
-    else if(!isset($_POST['login-checkbox'])) {
+    else if(empty($_POST['login-checkbox'])) {
         unset($_SESSION['phone']);
         unset($_SESSION['password']);
+        unset($_COOKIE['phone']);
+        setcookie('phone', '', time() - 3600, '/');
+        unset($_COOKIE['pass']);
+        setcookie('pass', '', time() - 3600, '/');
     }
     if (isset($values)){
         if ($values == 1) {
@@ -92,11 +98,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <h1 class="login-form__title">Đăng nhập</h1>
             <div class="login-form__input">
                 <label for="user__phone"><i class="ri-user-fill"></i></label>
-                <input type="text" class="user__phone" name="phone" placeholder="Nhập số điện thoại" value="<?php if(isset($_SESSION['phone'])) echo $_SESSION['phone']; ?>">
+                <input type="text" class="user__phone" name="phone" placeholder="Nhập số điện thoại" value="<?php if(isset($_COOKIE['phone'])) echo $_COOKIE['phone']; ?>">
             </div>
             <div class="login-form__input">
                 <label for="user__password"><i class="ri-lock-fill"></i></label>
-                <input type="password" class="user__password" name="password" placeholder="Nhập mật khẩu" value="<?php if(isset($_SESSION['password'])) echo $_SESSION['password']; ?>">
+                <input type="password" class="user__password" name="password" placeholder="Nhập mật khẩu" value="<?php if(isset($_COOKIE['pass'])) echo $_COOKIE['pass']; ?>">
             </div>
             
             <div class="login-form__remember">

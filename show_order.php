@@ -10,7 +10,7 @@ while ($row = $statement->fetch()) {
 if( isset($_POST['search']) ) {
     // $products = (object)$products;
     switch ($_POST['search-type']) {
-        case 'name-search':
+        case 'mdh-search':
             $statement = $conn->prepare('SELECT * FROM ocake.orders where madonhang like ? AND fullname <> "admin" ');
             $statement->execute(['%'.$_POST['search'].'%']);
             $row = $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -19,6 +19,12 @@ if( isset($_POST['search']) ) {
 
         case 'phone-search': 
             $statement = $conn->prepare('SELECT * FROM ocake.orders where phone_number like ? AND fullname <> "admin" ');
+            $statement->execute(['%'.$_POST['search'].'%']);
+            $row = $statement->fetchAll(PDO::FETCH_ASSOC);
+            $orders = $row;
+            break;
+        case 'name-search': 
+            $statement = $conn->prepare('SELECT * FROM ocake.orders where fullname like ? AND fullname <> "admin" ');
             $statement->execute(['%'.$_POST['search'].'%']);
             $row = $statement->fetchAll(PDO::FETCH_ASSOC);
             $orders = $row;
@@ -50,8 +56,9 @@ if(isset($_POST['sort'])) {
 <form action="" method="post" class="offset-2 col-sm-10 py-2">
     <input type="text" name="search" class="h-100 col-sm-5 search" placeholder="Tìm kiếm theo">
     <select class="h-100 col-2" name="search-type">
-        <option value="name-search">Mã đơn hàng</option>
+        <option value="mdh-search">Mã đơn hàng</option>
         <option value="phone-search">Số điện thoại</option>
+        <option value="name-search">Tên</option>
     </select>
     <button class="btn btn-danger">Tìm kiếm</button>
 </form>

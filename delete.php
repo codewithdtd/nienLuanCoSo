@@ -37,7 +37,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id_product'])) {
     exit();
     }
     catch(Exception $e) {
-        echo "<script>alert('Không thể xóa');</script>";
+        echo "<script>alert('Không thể xóa');window.location='admin.php?nav=sanpham'</script>";
     }
 
 
@@ -51,7 +51,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id_user'])) {
     exit();
     }
     catch(Exception $e) {
-        echo "<script>alert('Không thể xóa');</script>";
+        echo "<script>alert('Không thể xóa');window.location='admin.php?nav=khachhang'</script>";
     }
 
 
@@ -68,7 +68,7 @@ if($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['id_order'])) {
     exit();
     }
     catch(Exception $e) {
-        echo "<script>alert('Không thể xóa');</script>";
+        echo "<script>alert('Không thể xóa');window.location='admin.php?nav=donhang'</script>";
     }
 
 }
@@ -82,7 +82,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id_category'])) {
     exit();
     }
     catch(Exception $e) {
-        echo "<script>alert('Không thể xóa');</script>";
+        echo "<script>alert('Không thể xóa');window.location='admin.php?nav=category'</script>";
     }
 
 }
